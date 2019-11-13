@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <app-header></app-header>
+        <app-header :itemCount="todos.length" :maxItems="maxItems"></app-header>
         <app-new-item @itemAdded="newItem"></app-new-item>
         <app-todo-grid v-bind:todos="todos" @itemDeleted="deleteItem"></app-todo-grid>
         <div class="row">
@@ -25,6 +25,9 @@
         },
         methods: {
             newItem(item) {
+                if (this.todos.length >= this.maxItems) {
+                    return alert('Maximum items in list. Delete one before adding another')
+                }
                 this.todos.push(item);
             },
             deleteItem(index) {

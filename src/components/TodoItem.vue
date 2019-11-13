@@ -17,14 +17,12 @@
 
 <style>
   .panel-body {
-    font-family: 'Arizonia', 'cursive';
     font-size: 24px;
     color: #36454f;
   }
 
   .todo-item {
     cursor: pointer;
-    background-color: #d0c8b0;
   }
 
   .todo-item:hover {
