@@ -1,4 +1,4 @@
-# Todo :ist
+# Todo List
 
 ## Project setup
 
