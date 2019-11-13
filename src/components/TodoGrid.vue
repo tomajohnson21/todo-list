@@ -1,6 +1,10 @@
 <template>
   <div class="row">
-    <app-todo-item v-for="todo in todos" v-bind:key="todo.index">
+    <app-todo-item 
+      v-for="(todo, index) in todos" 
+      v-bind:key="index" 
+      @click.native="deleteItem(index)"
+    >
       {{ todo }}
     </app-todo-item>
   </div>
@@ -12,6 +16,11 @@
 
   export default {
     props: ['todos'],
+    methods: {
+      deleteItem(index) {
+        this.$emit('itemDeleted', index)
+      }
+    },
     components: {
       appTodoItem: TodoItem 
     }
